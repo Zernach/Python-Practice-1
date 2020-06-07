@@ -29,4 +29,15 @@ it should use today’s date to get the month and year.
 
 import sys
 import calendar
-from datetime import datetime
+import datetime
+
+def print_calendar(month=int(str(datetime.date.today())[5:7]), year=int(str(datetime.date.today())[0:4])):
+  try:
+    cal = calendar.month(year, month)
+    print(cal)
+  except Exception:
+    print('First arg is 1-digit or 2-digit month, second arg is 4-digit year')
+
+
+
+print_calendar(6, 1993)
